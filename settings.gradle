@@ -1,0 +1,7 @@
+include ':common'
+include ':remotedatasource'
+include ':repository'
+include ':home'
+include ':entities'
+include ':app'
+rootProject.name = "News App"
