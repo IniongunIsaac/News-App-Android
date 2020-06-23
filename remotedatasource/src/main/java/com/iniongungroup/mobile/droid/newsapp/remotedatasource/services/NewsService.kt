@@ -13,5 +13,5 @@ import retrofit2.http.Query
 
 interface NewsService {
     @GET("everything")
-    fun getNews(@Query("page") page: Int = 1, @Query("q") q: String = "bitcoin", @Query("apiKey") apiKey: String = BuildConfig.NEWS_API_KEY): Observable<NewsResponse>
+    fun getNews(@Query("page") page: Int = 1, @Query("pageSize") pageSize: Int = 50,  @Query("q") q: String = "bitcoin", @Query("apiKey") apiKey: String = BuildConfig.NEWS_API_KEY): Observable<NewsResponse>
 }

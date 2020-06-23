@@ -16,7 +16,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/standard_mid_margin">
+        android:padding="@dimen/standard_mid_margin"
+        android:layout_marginBottom="@dimen/standard_mid_margin">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/authorNameTextView"
@@ -31,16 +32,19 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/sourceNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{ article.source.name }"
-            tools:text="punchnews.ng"
             style="@style/AppText.Small.GrayedOut"
-            app:layout_constraintTop_toTopOf="@id/authorNameTextView"
-            app:layout_constraintBottom_toBottomOf="@id/authorNameTextView"
-            app:layout_constraintStart_toEndOf="@id/authorNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_mid_margin"
             android:layout_marginLeft="@dimen/standard_mid_margin"
-            android:layout_marginStart="@dimen/standard_mid_margin" />
+            android:singleLine="true"
+            android:text="@{ article.source.name }"
+            app:layout_constraintBottom_toBottomOf="@id/authorNameTextView"
+            app:layout_constraintEnd_toStartOf="@+id/datePublishedTextView"
+            app:layout_constraintStart_toEndOf="@id/authorNameTextView"
+            app:layout_constraintTop_toTopOf="@id/authorNameTextView"
+            android:layout_marginRight="@dimen/standard_mid_margin"
+            tools:text="punchnews.ng" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/datePublishedTextView"
