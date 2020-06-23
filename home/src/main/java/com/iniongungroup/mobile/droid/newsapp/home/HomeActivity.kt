@@ -1,8 +1,11 @@
 package com.iniongungroup.mobile.droid.newsapp.home
 
 import androidx.lifecycle.Observer
+import com.iniongungroup.mobile.droid.newsapp.common.adapters.BaseListAdapter
 import com.iniongungroup.mobile.droid.newsapp.common.base.BaseActivity
+import com.iniongungroup.mobile.droid.newsapp.entities.Article
 import com.iniongungroup.mobile.droid.newsapp.home.databinding.HomeActivityBinding
+import com.iniongungroup.mobile.droid.newsapp.home.databinding.NewsItemBinding
 import javax.inject.Inject
 
 /**
@@ -24,15 +27,24 @@ class HomeActivity: BaseActivity<HomeActivityBinding, HomeActivityViewModel>() {
 
     override fun getBinding(binding: HomeActivityBinding) { this.binding = binding }
 
+    private val newsAdapter by lazy {
+        object : BaseListAdapter<NewsItemBinding, Article>(homeActivityViewModel, R.layout.news_item) {
+
+            override fun getEntityBindingVariable() = BR.article
+
+            override fun getViewModelBindingVariable() = BR.viewModel
+        }
+    }
+
     override fun onResume() {
         super.onResume()
+        binding.newsRecyclerView.adapter = newsAdapter
         observeNewsArticles()
-
     }
 
     private fun observeNewsArticles() {
         homeActivityViewModel.newsArticles.observe(this, Observer {
-
+            newsAdapter.submitList(it)
         })
     }
 

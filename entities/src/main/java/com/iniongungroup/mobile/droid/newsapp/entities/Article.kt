@@ -9,4 +9,7 @@ data class Article(
     val title: String,
     val url: String,
     val urlToImage: String
-)
+): BaseEntity() {
+    val datePublished: String
+        get() = publishedAt.split("T")[0]
+}

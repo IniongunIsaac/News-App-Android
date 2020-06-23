@@ -53,4 +53,9 @@ dependencies {
             project(Modules.entities),
             project(Modules.common)
     )
+
+    kapt(
+            Dependencies.daggerCompiler,
+            Dependencies.daggerAndroidProcessor
+    )
 }

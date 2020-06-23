@@ -14,11 +14,13 @@ dependencies {
             Dependencies.room,
             Dependencies.roomRx,
             Dependencies.gson,
-            Dependencies.threeTenAndroidBackport
+            Dependencies.threeTenAndroidBackport,
+            Dependencies.dagger
     )
 
     kapt(
-            Dependencies.roomCompiler
+            Dependencies.roomCompiler,
+            Dependencies.daggerCompiler
     )
 
 }

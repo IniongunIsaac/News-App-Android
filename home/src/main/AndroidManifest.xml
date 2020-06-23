@@ -4,8 +4,7 @@
     <application>
 
         <activity
-            android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".HomeActivity">
 
             <intent-filter>
                 <action android:name="${homeIntent}"/>

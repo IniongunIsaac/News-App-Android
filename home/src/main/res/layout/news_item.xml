@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.iniongungroup.mobile.droid.newsapp.home.HomeActivityViewModel" />
+
+        <variable
+            name="article"
+            type="com.iniongungroup.mobile.droid.newsapp.entities.Article" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/standard_mid_margin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/authorNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ article.author }"
+            tools:text="David Ogbonna"
+            style="@style/AppText.Small.Bold"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sourceNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ article.source.name }"
+            tools:text="punchnews.ng"
+            style="@style/AppText.Small.GrayedOut"
+            app:layout_constraintTop_toTopOf="@id/authorNameTextView"
+            app:layout_constraintBottom_toBottomOf="@id/authorNameTextView"
+            app:layout_constraintStart_toEndOf="@id/authorNameTextView"
+            android:layout_marginLeft="@dimen/standard_mid_margin"
+            android:layout_marginStart="@dimen/standard_mid_margin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/datePublishedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ article.datePublished }"
+            tools:text="2020-11-22"
+            style="@style/AppText.Small.GrayedOut"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/authorNameTextView"
+            app:layout_constraintBottom_toBottomOf="@id/authorNameTextView"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="5"
+            android:ellipsize="end"
+            style="@style/AppText.Small.Light"
+            android:text="@{ article.title }"
+            tools:text="God Help Us, the Winklevoss Twins Are Co-Producing a Movie About Their Bitcoin Journey"
+            app:layout_constraintTop_toBottomOf="@id/authorNameTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/articleMedia"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            app:placeholderImage="@drawable/mountains"
+            android:layout_marginTop="@dimen/standard_mid_margin"
+            app:image="@{ article.urlToImage }"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

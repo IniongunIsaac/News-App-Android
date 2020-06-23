@@ -16,13 +16,16 @@ android {
 dependencies {
 
     implementation(
-            Dependencies.kotlin,
+            //Dependencies.kotlin,
             Dependencies.javax,
             Dependencies.javaxAnnotation,
             Dependencies.okhttp,
             Dependencies.okhttpLoggingInterceptor,
             Dependencies.retrofit,
             Dependencies.rxJava,
+            Dependencies.retrofitRxJavaAdapter,
+            Dependencies.retrofitGsonConverter,
+            Dependencies.dagger,
 
             project(Modules.repository)
     )
