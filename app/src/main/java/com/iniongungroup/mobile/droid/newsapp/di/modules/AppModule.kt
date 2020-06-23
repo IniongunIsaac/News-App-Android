@@ -24,7 +24,7 @@ class AppModule {
 
     @Provides
     @AppScope
-    fun providesGson() = GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create()
+    fun providesGson() = GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").serializeNulls().create()
 
     @Provides
     @AppScope

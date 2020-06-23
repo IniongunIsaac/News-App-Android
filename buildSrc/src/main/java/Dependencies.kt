@@ -87,6 +87,9 @@ object NavIntents {
 
 object Dependencies {
 
+    const val BASE_URL = "\"https://newsapi.org/v2/\""
+    const val NEWS_API_KEY = "\"f36dad6d62634b02b6ef39ed38dc23a3\""
+
     //Classpaths
     const val gradle = "com.android.tools.build:gradle:${DepVersions.gradle}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${DepVersions.kotlin}"
@@ -140,6 +143,7 @@ object Dependencies {
     const val retrofit = "com.squareup.retrofit2:retrofit:${DepVersions.retrofit}"
     const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${DepVersions.retrofit}"
     const val retrofitCoroutinesAdapter =  "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${DepVersions.retrofitCoroutinesAdapter}"
+    const val retrofitRxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:${DepVersions.retrofit}"
 
     // ViewModel
     const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:${DepVersions.lifecycle}"

@@ -1,6 +1,8 @@
 package com.iniongungroup.mobile.droid.newsapp.di.modules
 
 import com.iniongungroup.mobile.droid.newsapp.di.scopes.AppScope
+import com.iniongungroup.mobile.droid.newsapp.repository.INewsRepo
+import com.iniongungroup.mobile.droid.newsapp.repository.NewsRepoImpl
 import dagger.Binds
 import dagger.Module
 
@@ -12,10 +14,10 @@ import dagger.Module
 @Module
 abstract class RepositoryModule {
 
-//    @Binds
-//    @AppScope
-//    internal abstract fun bindPreferenceRepo(
-//        preference: PreferencesRepoImpl
-//    ): IPreferencesRepo
+    @Binds
+    @AppScope
+    internal abstract fun bindNewsRepo(
+        repo: NewsRepoImpl
+    ): INewsRepo
 
 }

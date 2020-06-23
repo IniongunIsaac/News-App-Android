@@ -83,6 +83,9 @@ dependencies {
             Dependencies.rxAndroid,
 
             Dependencies.gson,
+            Dependencies.okhttpLoggingInterceptor,
+            Dependencies.retrofitGsonConverter,
+            Dependencies.retrofitRxJavaAdapter,
 
             Dependencies.commonsText,
 

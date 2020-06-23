@@ -1,5 +1,9 @@
 package com.iniongungroup.mobile.droid.newsapp.di.modules
 
+import com.iniongungroup.mobile.droid.newsapp.di.scopes.AppScope
+import com.iniongungroup.mobile.droid.newsapp.remotedatasource.repoimpl.NewsRemoteDataSourceImpl
+import com.iniongungroup.mobile.droid.newsapp.repository.remotedatasource.INewsRemoteDataSource
+import dagger.Binds
 import dagger.Module
 
 /**
@@ -8,4 +12,12 @@ import dagger.Module
  */
 
 @Module
-class RemoteDataSourceModule {}
+abstract class RemoteDataSourceModule {
+
+    @Binds
+    @AppScope
+    internal abstract fun bindNewsRemoteDataSource(
+        remotedatasource: NewsRemoteDataSourceImpl
+    ): INewsRemoteDataSource
+
+}
