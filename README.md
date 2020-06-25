@@ -14,6 +14,13 @@ The application is built using the following:
 * Dagger2
 * Material Design (with Dark Mode Compatibility)
 * Navigation Component
+* Android Studio 4.0
+
+### How to run(installation):
+
+* Clone this repository.
+* Open the source files in Android Studio
+* Build and run the project on the Emulator or any physically connected Android device.
     
 ## Screenshots
 [<img src="/media/screenshot_1.png" align="center" width ="22%" hspace="0" vspace="10">](/media/screenshot_1.png)
