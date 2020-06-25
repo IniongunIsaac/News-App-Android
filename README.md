@@ -1,7 +1,7 @@
 ## News App
 
 An Android News Feed application developed using Kotlin, MVVM with repository pattern, LiveData, ViewModel, Rx, Dagger2, Material Design, Navigation Components, Data Binding and some other libraries from Android Jetpack.
-The application allows users to go through a News Feed whose source is backed by [News API](https://newsapi.org/docs/get-started).
+The application is also built with multi-modules such that core features are independent and isolated from each other. The application allows users to go through a News Feed whose source is backed by [News API](https://newsapi.org/docs/get-started).
 
 ## Technology Stack
 The application is built using the following:
