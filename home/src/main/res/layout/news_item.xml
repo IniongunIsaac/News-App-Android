@@ -17,7 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/standard_mid_margin"
-        android:layout_marginBottom="@dimen/standard_mid_margin">
+        android:layout_marginBottom="@dimen/standard_mid_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="@{ () -> viewModel.handleNewsItemClicked(article) }">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/authorNameTextView"

@@ -77,12 +77,16 @@ object Modules {
     const val entities = ":entities"
     const val repository = ":repository"
     const val home = ":home"
+    const val newsdetails = ":newsdetails"
     const val remotedatasource = ":remotedatasource"
 }
 
 object NavIntents {
     const val home = "\"com.iniongungroup.mobile.droid.newsapp.home.start\""
     var homeIntent = home.replace("\"", "")
+
+    const val newsDetails = "\"com.iniongungroup.mobile.droid.newsapp.newsdetails.start\""
+    var newsDetailsIntent = newsDetails.replace("\"", "")
 }
 
 object Dependencies {

@@ -4,6 +4,7 @@ android {
 
     defaultConfig {
         buildConfigField("String", "HOME_NAV_INTENT", NavIntents.home)
+        buildConfigField("String", "NEWS_DETAILS_NAV_INTENT", NavIntents.newsDetails)
     }
 
     kotlinOptions {

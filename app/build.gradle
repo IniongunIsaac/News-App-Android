@@ -95,6 +95,7 @@ dependencies {
             Dependencies.daggerAndroidSupport,
 
             project(Modules.home),
+            project(Modules.newsdetails),
             project(Modules.remotedatasource),
             project(Modules.repository),
             project(Modules.common)

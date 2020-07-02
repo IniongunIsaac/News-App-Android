@@ -1,3 +1,4 @@
+include ':newsdetails'
 include ':common'
 include ':remotedatasource'
 include ':repository'

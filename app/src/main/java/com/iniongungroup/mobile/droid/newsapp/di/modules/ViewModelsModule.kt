@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.iniongungroup.mobile.droid.newsapp.common.base.BaseViewModel
 import com.iniongungroup.mobile.droid.newsapp.di.keys.AppViewModelKey
 import com.iniongungroup.mobile.droid.newsapp.home.HomeActivityViewModel
+import com.iniongungroup.mobile.droid.newsapp.newsdetails.NewsDetailsActivityViewModel
 import com.iniongungroup.mobile.droid.newsapp.viewmodelfactory.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -27,6 +28,13 @@ abstract class ViewModelsModule {
     @AppViewModelKey(HomeActivityViewModel::class)
     abstract fun bindHomeActivityViewModel(
         viewModel: HomeActivityViewModel
+    ): BaseViewModel
+
+    @Binds
+    @IntoMap
+    @AppViewModelKey(NewsDetailsActivityViewModel::class)
+    abstract fun bindNewsDetailsActivityViewModel(
+        viewModel: NewsDetailsActivityViewModel
     ): BaseViewModel
 
 }

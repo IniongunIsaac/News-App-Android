@@ -3,6 +3,8 @@ package com.iniongungroup.mobile.droid.newsapp.home
 import androidx.lifecycle.Observer
 import com.iniongungroup.mobile.droid.newsapp.common.adapters.BaseListAdapter
 import com.iniongungroup.mobile.droid.newsapp.common.base.BaseActivity
+import com.iniongungroup.mobile.droid.newsapp.common.utils.livedataevent.LiveDataEventObserver
+import com.iniongungroup.mobile.droid.newsapp.common.utils.navigation.AppActivityNavCommands
 import com.iniongungroup.mobile.droid.newsapp.entities.Article
 import com.iniongungroup.mobile.droid.newsapp.home.databinding.HomeActivityBinding
 import com.iniongungroup.mobile.droid.newsapp.home.databinding.NewsItemBinding
@@ -40,11 +42,18 @@ class HomeActivity: BaseActivity<HomeActivityBinding, HomeActivityViewModel>() {
         super.onResume()
         binding.newsRecyclerView.adapter = newsAdapter
         observeNewsArticles()
+        observeNewsArticle()
     }
 
     private fun observeNewsArticles() {
         homeActivityViewModel.newsArticles.observe(this, Observer {
             newsAdapter.submitList(it)
+        })
+    }
+
+    private fun observeNewsArticle() {
+        homeActivityViewModel.article.observe(this, LiveDataEventObserver {
+            startActivity(AppActivityNavCommands.getNewsDetailsActivityIntent(this, it))
         })
     }
 

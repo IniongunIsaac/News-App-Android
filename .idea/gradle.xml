@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/entities" />
             <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/newsdetails" />
             <option value="$PROJECT_DIR$/remotedatasource" />
             <option value="$PROJECT_DIR$/repository" />
           </set>
